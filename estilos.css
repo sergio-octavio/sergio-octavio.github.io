@@ -558,3 +558,23 @@ data-styled.g148[id="sc-global-koxjWe2"] {
     content: "sc-global-koxjWe2,"
 }
 /*!sc*/
+
+
+
+#container_foto_instagram {
+  width: 200px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: o;
+}
+#a_foto_insatagram {
+  width: 20%;
+  padding: 1px;
+}
+#b_foto_insatagram {
+  width: 20%;
+  height: 200px;
+
+  
+}
