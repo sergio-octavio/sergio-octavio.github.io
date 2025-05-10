@@ -5,57 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Octavio Mancebo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-<!--    Favicon-->
-    <link rel="icon" href="images/foto.jpg">
+    <!-- Favicon -->
+    <link rel="icon" href="images/foto.jpg" type="image/jpg">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
-<body class="bg-yellow-400 min-h-screen flex flex-col items-center justify-center p-4">
-<!-- Logo -->
-<img src="images/foto.jpg" alt="Sergio Octavio Mancebo" class="w-24 h-24 rounded-full mb-4">
+<body class="bg-gradient-to-b from-yellow-400 to-yellow-500 min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Logo con animación -->
+<img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
+     class="w-24 h-24 rounded-full mb-4 shadow-lg animate__animated animate__bounceIn">
 
-<!-- Title -->
-<h1 class="text-2xl font-bold text-center">Sergio Octavio Mancebo </h1>
+<!-- Title con efecto de aparición -->
+<h1 class="text-3xl md:text-4xl font-bold text-center mb-2 fade-in">
+    Sergio Octavio Mancebo
+</h1>
 
-<p class="text-center mb-4">
-    Contacto: <a href="mailto:info.sergiooctaviomancebo@gmail.com" class="text-blue-500 underline">info.sergiooctaviomancebo@gmail.com</a>
+<!-- Contacto -->
+<p class="text-center mb-6 fade-in">
+    Contacto: <a href="mailto:info.sergiooctaviomancebo@gmail.com"
+                 class="text-blue-600 hover:text-blue-800 underline transition-colors duration-300">
+    info.sergiooctaviomancebo@gmail.com</a>
 </p>
 
-<!-- Social Media Buttons -->
-<div class="flex space-x-4 mb-6 text-2xl text-black">
-    <a href="https://www.instagram.com/sergio.octavio/" target="_blank" class="hover:text-yellow-500">
+<!-- Social Media Buttons con hover effect -->
+<div class="flex space-x-6 mb-8 text-3xl text-black">
+    <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
+       class="social-icon hover:text-yellow-700">
         <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://x.com/SergioOctaviooo" target="_blank" class="hover:text-yellow-500">
+    <a href="https://x.com/SergioOctaviooo" target="_blank"
+       class="social-icon hover:text-yellow-700">
         <i class="fab fa-twitter"></i>
     </a>
-    <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank" class="hover:text-yellow-500">
+    <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
+       class="social-icon hover:text-yellow-700">
         <i class="fab fa-linkedin"></i>
     </a>
-    <a href="https://github.com/sergio-octavio" target="_blank" class="hover:text-yellow-500">
+    <a href="https://github.com/sergio-octavio" target="_blank"
+       class="social-icon hover:text-yellow-700">
         <i class="fab fa-github"></i>
     </a>
 </div>
 
-<!-- Buttons -->
-<div class="w-full max-w-md space-y-4">
-    <a href="https://octaviobikes.github.io/" target="_blank" class="flex items-center bg-yellow-300 hover:bg-yellow-500 text-black px-4 py-3 rounded-lg shadow-md">
-        <img src="images/logo_octaviobikes.png" alt="Icon" class="w-8 h-8 mr-3">
-        <span>CEO en Octavio Bikes</span>
+<!-- Cards con efecto hover y scroll suave -->
+<div class="w-full max-w-md space-y-6 mb-10">
+    <a href="https://octaviobikes.github.io/" target="_blank"
+       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
+        <img src="images/logo_octaviobikes.png" alt="Icon" class="w-10 h-10 mr-4">
+        <span class="font-medium">CEO en Octavio Bikes</span>
     </a>
-    <a href="https://fitnessoctavio.github.io/" target="_blank" class="flex items-center bg-yellow-300 hover:bg-yellow-500 text-black px-4 py-3 rounded-lg shadow-md">
-        <img src="images/logo_fitnessoctavio.png" alt="Icon" class="w-8 h-8 mr-3">
-        <span>Entrenador Personal @fitness.octavio</span>
+    <a href="https://fitnessoctavio.github.io/" target="_blank"
+       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
+        <img src="images/logo_fitnessoctavio.png" alt="Icon" class="w-10 h-10 mr-4">
+        <span class="font-medium">Entrenador Personal @fitness.octavio</span>
     </a>
-    <a href="https://srko.co/octavio" target="_blank" class="flex items-center bg-yellow-300 hover:bg-yellow-500 text-black px-4 py-3 rounded-lg shadow-md">
-        <img src="images/logo_siroko.png" alt="Icon" class="w-8 h-8 mr-3">
-        <span>10% de descuento en toda la web de Siroko</span>
+    <a href="https://srko.co/octavio" target="_blank"
+       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
+        <img src="images/logo_siroko.png" alt="Icon" class="w-10 h-10 mr-4">
+        <span class="font-medium">10% de descuento en Siroko</span>
     </a>
-
 </div>
+
+<!-- Sección adicional con scroll -->
+<div id="more" class="w-full max-w-2xl bg-yellow-200 bg-opacity-80 rounded-xl p-6 mb-10 shadow-lg animate__animated animate__fadeInUp">
+    <h2 class="text-2xl font-bold mb-4 text-center">Más sobre mí</h2>
+    <p class="text-gray-800 mb-4">
+        Apasionado del ciclismo, fitness y tecnología. Siempre buscando nuevos retos y oportunidades para crecer tanto personal como profesionalmente.
+    </p>
+    <div class="text-center">
+        <a href="mailto:info.sergiooctaviomancebo@gmail.com" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-2 rounded-lg transition-all duration-300">
+            Contáctame
+        </a>
+    </div>
+</div>
+
+<!-- Sección de contacto -->
+<div id="contact" class="w-full max-w-md bg-yellow-300 bg-opacity-90 rounded-xl p-6 shadow-lg animate__animated animate__fadeIn">
+    <h2 class="text-2xl font-bold mb-4 text-center">Contacto</h2>
+    <p class="text-center mb-4">
+        ¿Quieres colaborar o tienes alguna pregunta?
+    </p>
+    <a href="mailto:info.sergiooctaviomancebo@gmail.com"
+       class="block text-center bg-black text-yellow-400 hover:bg-gray-800 font-medium px-6 py-3 rounded-lg transition-all duration-300">
+        Envíame un email
+    </a>
+</div>
+
+<!-- Flecha para volver arriba -->
+<a href="#" class="fixed bottom-6 right-6 bg-yellow-500 text-black p-3 rounded-full shadow-lg hover:bg-yellow-600 transition-all duration-300">
+    <i class="fas fa-arrow-up"></i>
+</a>
 
 <!-- Font Awesome -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
 
+<!-- Script para animaciones al hacer scroll -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__fadeInUp');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('#more, #contact').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
 </body>
 </html>
