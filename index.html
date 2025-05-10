@@ -20,6 +20,7 @@
         body {
             overflow-x: hidden;
             font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #000; /* Texto principal en negro */
         }
 
         /* Efecto partículas */
@@ -71,17 +72,23 @@
             animation: pulse 1.5s infinite;
         }
 
-        /* Efecto neón */
+        /* Efecto neón con texto negro y bordes amarillos */
         .neon-text {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary);
+            color: #000;
+            text-shadow:
+                    0 0 5px var(--primary),
+                    0 0 10px var(--primary),
+                    0 0 15px var(--primary),
+                    0 0 20px var(--primary);
         }
 
-        /* Efecto vidrio */
+        /* Efecto vidrio mejorado */
         .glass {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #000;
         }
 
         /* Scroll personalizado */
@@ -97,14 +104,6 @@
             background: var(--primary);
             border-radius: 5px;
         }
-
-        /* Efecto parallax */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
     </style>
 </head>
 
@@ -119,7 +118,7 @@
 <main class="container mx-auto px-4 py-12 relative z-10">
     <!-- Sección hero -->
     <section class="min-h-screen flex flex-col items-center justify-center text-center">
-        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl transform transition-all duration-500 hover:shadow-neon">
+        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl transform transition-all duration-500 hover:shadow-xl">
             <!-- Avatar con efecto flotante -->
             <div class="relative mx-auto w-40 h-40 mb-8 group">
                 <img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
@@ -128,157 +127,230 @@
                 <div class="absolute -inset-2 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-40 blur-md transition-all duration-500"></div>
             </div>
 
-            <!-- Título con efecto neón -->
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-white neon-text animate__animated animate__fadeInDown">
+            <!-- Título con efecto neón (texto negro con borde amarillo) -->
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4  animate__animated animate__fadeInDown">
                 Sergio Octavio Mancebo
             </h1>
 
             <!-- Subtítulo con efecto máquina de escribir -->
-            <p class="text-xl md:text-2xl font-medium mb-8 text-white typewriter" id="typewriter"></p>
+            <p class="text-xl md:text-2xl font-medium mb-8 typewriter" id="typewriter"></p>
 
             <!-- Redes sociales con efecto hover 3D -->
             <div class="flex justify-center space-x-6 mb-12">
                 <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
                    class="social-btn instagram transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-instagram text-3xl text-white"></i>
+                    <i class="fab fa-instagram text-3xl text-gray-900 hover:text-amber-600"></i>
                 </a>
                 <a href="https://x.com/SergioOctaviooo" target="_blank"
                    class="social-btn twitter transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-twitter text-3xl text-white"></i>
+                    <i class="fab fa-twitter text-3xl text-gray-900 hover:text-amber-600"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
                    class="social-btn linkedin transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-linkedin-in text-3xl text-white"></i>
+                    <i class="fab fa-linkedin-in text-3xl text-gray-900 hover:text-amber-600"></i>
                 </a>
                 <a href="https://github.com/sergio-octavio" target="_blank"
                    class="social-btn github transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-github text-3xl text-white"></i>
+                    <i class="fab fa-github text-3xl text-gray-900 hover:text-amber-600"></i>
                 </a>
             </div>
 
             <!-- Botón CTA con efecto -->
             <a href="#projects"
-               class="inline-block bg-white text-amber-600 font-bold px-8 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
+               class="inline-block bg-gray-900 text-amber-400 font-bold px-8 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-black pulse">
                 Mis Proyectos <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
 
         <!-- Flecha indicadora de scroll -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white text-2xl"></i>
+            <i class="fas fa-chevron-down text-gray-900 text-2xl"></i>
         </div>
     </section>
 
     <!-- Sección de proyectos -->
     <section id="projects" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-16 text-white neon-text">Mis Proyectos</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 ">Mis Proyectos</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Proyecto 1 -->
             <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
                     <img src="images/logo_octaviobikes.png" alt="Octavio Bikes"
                          class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <a href="https://octaviobikes.github.io/" target="_blank"
-                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            Ver Proyecto
+                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            VER PROYECTO
                         </a>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-white mb-2">Octavio Bikes</h3>
-                    <p class="text-yellow-100">CEO en Octavio Bikes</p>
+                    <h3 class="text-2xl font-bold mb-2">Octavio Bikes</h3>
+                    <p class="text-gray-700">CEO en Octavio Bikes</p>
                 </div>
             </div>
 
             <!-- Proyecto 2 -->
             <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
                     <img src="images/logo_fitnessoctavio.png" alt="Fitness Octavio"
                          class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <a href="https://fitnessoctavio.github.io/" target="_blank"
-                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            Ver Proyecto
+                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            VER PROYECTO
                         </a>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-white mb-2">Fitness Octavio</h3>
-                    <p class="text-yellow-100">Entrenador Personal</p>
+                    <h3 class="text-2xl font-bold mb-2">Fitness Octavio</h3>
+                    <p class="text-gray-700">Entrenador Personal</p>
                 </div>
             </div>
 
             <!-- Proyecto 3 -->
             <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
                     <img src="images/logo_siroko.png" alt="Siroko"
                          class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <a href="https://srko.co/octavio" target="_blank"
-                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            Ver Oferta
+                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            VER OFERTA
                         </a>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-white mb-2">Siroko</h3>
-                    <p class="text-yellow-100">10% de descuento</p>
+                    <h3 class="text-2xl font-bold mb-2">Siroko</h3>
+                    <p class="text-gray-700">10% de descuento</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de contacto -->
+
+    <!-- Sección de contacto - Versión modificada -->
     <section id="contact" class="py-20">
         <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8 text-white neon-text">Contacto</h2>
+            <h2 class="text-4xl font-bold text-center mb-8">Contacto</h2>
 
-            <form class="space-y-6">
+            <!-- Formulario con Formspree -->
+            <form id="contactForm" action="https://formspree.io/f/mvgabprw" method="POST" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-white font-medium mb-2">Nombre</label>
-                        <input type="text" id="name"
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300">
+                        <label for="name" class="block font-medium mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
                     </div>
                     <div>
-                        <label for="email" class="block text-white font-medium mb-2">Email</label>
-                        <input type="email" id="email"
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300">
+                        <label for="email" class="block font-medium mb-2">Email*</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
                     </div>
+                    <div>
+                        <label for="confirmEmail" class="block font-medium mb-2">Confirmar Email*</label>
+                        <input type="email" id="confirmEmail" name="confirmEmail" required
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                    </div>
+                    <div>
+                        <label for="phone" class="block font-medium mb-2">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" pattern="^[0-9]{9}$"
+                               title="Introduce un número de teléfono válido de 9 dígitos"
+                               minlength="9" maxlength="9"
+                               oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                    </div>
+
                 </div>
 
                 <div>
-                    <label for="message" class="block text-white font-medium mb-2">Mensaje</label>
-                    <textarea id="message" rows="5"
-                              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300"></textarea>
+                    <label for="message" class="block font-medium mb-2">Mensaje*</label>
+                    <textarea id="message" name="message" rows="5" required
+                              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"></textarea>
                 </div>
 
+                <!-- Mensaje de estado (oculto inicialmente) -->
+                <div id="formStatus" class="hidden px-4 py-3 rounded-lg"></div>
+
                 <button type="submit"
-                        class="w-full bg-white text-amber-600 font-bold px-6 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100 pulse">
+                        class="w-full bg-gray-900 text-amber-400 font-bold px-6 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl pulse">
                     Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
                 </button>
             </form>
 
             <div class="mt-8 text-center">
-                <p class="text-white mb-4">O contáctame directamente:</p>
+                <p class="mb-4">O contáctame directamente:</p>
                 <a href="mailto:info.sergiooctaviomancebo@gmail.com"
-                   class="inline-block bg-yellow-500 text-white font-bold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                   class="inline-block bg-gray-900 text-amber-400 font-bold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                     info.sergiooctaviomancebo@gmail.com
                 </a>
             </div>
         </div>
     </section>
+
+    <script>
+        // Manejo del formulario de contacto con Formspree
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formStatus = document.getElementById('formStatus');
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            // Cambiar estado del botón
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin ml-2"></i>';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Mostrar mensaje de éxito
+                    formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
+                    formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                    formStatus.classList.add('bg-green-100', 'text-green-700');
+
+                    // Resetear formulario
+                    form.reset();
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            } catch (error) {
+                // Mostrar mensaje de error
+                formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+                formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                formStatus.classList.add('bg-red-100', 'text-red-700');
+            } finally {
+                // Restaurar botón
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>';
+
+                // Mostrar mensaje de estado
+                formStatus.classList.remove('hidden');
+
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+            }
+        });
+    </script>
 </main>
 
 <!-- Footer -->
-<footer class="py-8 text-center text-white text-opacity-80">
+<footer class="py-8 text-center text-gray-900">
     <p>© <span id="year"></span> Sergio Octavio Mancebo. Todos los derechos reservados.</p>
 </footer>
 
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/tunumero" target="_blank"
+<!-- Botón flotante de WhatsApp con mensaje predeterminado -->
+<a href="https://wa.me/34681148027?text=Hola%20mi%20nombre%20es%20[TU%20NOMBRE].%20Me%20pongo%20en%20contacto%20contigo%20a%20través%20de%20la%20página%20web%20por%20este%20motivo:" target="_blank"
    class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50">
     <i class="fab fa-whatsapp text-2xl"></i>
 </a>
@@ -395,7 +467,7 @@
     });
 
     // Efecto máquina de escribir
-    const typewriterText = "Emprendedor · Ciclista · Entrenador · Apasionado";
+    const typewriterText = "Ingeniero Software · Entrenador · Apasionado del Emprendimiento";
     const typewriterElement = document.getElementById('typewriter');
     let i = 0;
 
@@ -419,6 +491,17 @@
             }
         });
     };
+
+    // Manejo del formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Aquí puedes añadir el código para enviar el formulario
+        // Por ejemplo, usando Formspree, EmailJS o tu propio backend
+
+        alert('Gracias por tu mensaje. Me pondré en contacto contigo pronto.');
+        this.reset();
+    });
 
     // Año actual en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
