@@ -3,144 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Octavio Mancebo</title>
+    <title>Sergio Octavio Mancebo | Portfolio Dinámico</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
-    <link rel="icon" href="images/foto.jpg" type="image/jpg">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary: #f59e0b;
+            --secondary: #fbbf24;
         }
-        .fade-in {
-            animation: fadeIn 1.5s ease-in;
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        /* Efecto partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+
+        /* Efecto cursor personalizado */
+        .cursor {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+        .cursor.active {
+            width: 60px;
+            height: 60px;
+            background: rgba(245, 158, 11, 0.3);
         }
-        .social-icon {
-            transition: all 0.3s ease;
+
+        /* Animaciones personalizadas */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
-        .social-icon:hover {
-            transform: scale(1.2);
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Efecto neón */
+        .neon-text {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary);
+        }
+
+        /* Efecto vidrio */
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Scroll personalizado */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fef3c7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        /* Efecto parallax */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
 
-<body class="bg-gradient-to-b from-yellow-400 to-yellow-500 min-h-screen flex flex-col items-center justify-center p-4">
-<!-- Logo con animación -->
-<img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
-     class="w-24 h-24 rounded-full mb-4 shadow-lg animate__animated animate__bounceIn">
+<body class="bg-gradient-to-br from-yellow-400 to-amber-500 min-h-screen relative overflow-x-hidden">
+<!-- Efecto partículas -->
+<div id="particles-js"></div>
 
-<!-- Title con efecto de aparición -->
-<h1 class="text-3xl md:text-4xl font-bold text-center mb-2 fade-in">
-    Sergio Octavio Mancebo
-</h1>
+<!-- Cursor personalizado -->
+<div class="cursor"></div>
 
-<!-- Contacto -->
-<p class="text-center mb-6 fade-in">
-    Contacto: <a href="mailto:info.sergiooctaviomancebo@gmail.com"
-                 class="text-blue-600 hover:text-blue-800 underline transition-colors duration-300">
-    info.sergiooctaviomancebo@gmail.com</a>
-</p>
+<!-- Contenido principal -->
+<main class="container mx-auto px-4 py-12 relative z-10">
+    <!-- Sección hero -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center">
+        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl transform transition-all duration-500 hover:shadow-neon">
+            <!-- Avatar con efecto flotante -->
+            <div class="relative mx-auto w-40 h-40 mb-8 group">
+                <img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
+                     class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl floating">
+                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-yellow-300 transition-all duration-500"></div>
+                <div class="absolute -inset-2 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-40 blur-md transition-all duration-500"></div>
+            </div>
 
-<!-- Social Media Buttons con hover effect -->
-<div class="flex space-x-6 mb-8 text-3xl text-black">
-    <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
-       class="social-icon hover:text-yellow-700">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://x.com/SergioOctaviooo" target="_blank"
-       class="social-icon hover:text-yellow-700">
-        <i class="fab fa-twitter"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
-       class="social-icon hover:text-yellow-700">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/sergio-octavio" target="_blank"
-       class="social-icon hover:text-yellow-700">
-        <i class="fab fa-github"></i>
-    </a>
-</div>
+            <!-- Título con efecto neón -->
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-white neon-text animate__animated animate__fadeInDown">
+                Sergio Octavio Mancebo
+            </h1>
 
-<!-- Cards con efecto hover y scroll suave -->
-<div class="w-full max-w-md space-y-6 mb-10">
-    <a href="https://octaviobikes.github.io/" target="_blank"
-       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
-        <img src="images/logo_octaviobikes.png" alt="Icon" class="w-10 h-10 mr-4">
-        <span class="font-medium">CEO en Octavio Bikes</span>
-    </a>
-    <a href="https://fitnessoctavio.github.io/" target="_blank"
-       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
-        <img src="images/logo_fitnessoctavio.png" alt="Icon" class="w-10 h-10 mr-4">
-        <span class="font-medium">Entrenador Personal @fitness.octavio</span>
-    </a>
-    <a href="https://srko.co/octavio" target="_blank"
-       class="flex items-center bg-yellow-300 hover:bg-yellow-600 text-black px-6 py-4 rounded-xl shadow-md card-hover transition-all duration-300">
-        <img src="images/logo_siroko.png" alt="Icon" class="w-10 h-10 mr-4">
-        <span class="font-medium">10% de descuento en Siroko</span>
-    </a>
-</div>
+            <!-- Subtítulo con efecto máquina de escribir -->
+            <p class="text-xl md:text-2xl font-medium mb-8 text-white typewriter" id="typewriter"></p>
 
-<!-- Sección adicional con scroll -->
-<div id="more" class="w-full max-w-2xl bg-yellow-200 bg-opacity-80 rounded-xl p-6 mb-10 shadow-lg animate__animated animate__fadeInUp">
-    <h2 class="text-2xl font-bold mb-4 text-center">Más sobre mí</h2>
-    <p class="text-gray-800 mb-4">
-        Apasionado del ciclismo, fitness y tecnología. Siempre buscando nuevos retos y oportunidades para crecer tanto personal como profesionalmente.
-    </p>
-    <div class="text-center">
-        <a href="mailto:info.sergiooctaviomancebo@gmail.com" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-2 rounded-lg transition-all duration-300">
-            Contáctame
-        </a>
-    </div>
-</div>
+            <!-- Redes sociales con efecto hover 3D -->
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
+                   class="social-btn instagram transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                    <i class="fab fa-instagram text-3xl text-white"></i>
+                </a>
+                <a href="https://x.com/SergioOctaviooo" target="_blank"
+                   class="social-btn twitter transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                    <i class="fab fa-twitter text-3xl text-white"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
+                   class="social-btn linkedin transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                    <i class="fab fa-linkedin-in text-3xl text-white"></i>
+                </a>
+                <a href="https://github.com/sergio-octavio" target="_blank"
+                   class="social-btn github transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                    <i class="fab fa-github text-3xl text-white"></i>
+                </a>
+            </div>
 
-<!-- Sección de contacto -->
-<div id="contact" class="w-full max-w-md bg-yellow-300 bg-opacity-90 rounded-xl p-6 shadow-lg animate__animated animate__fadeIn">
-    <h2 class="text-2xl font-bold mb-4 text-center">Contacto</h2>
-    <p class="text-center mb-4">
-        ¿Quieres colaborar o tienes alguna pregunta?
-    </p>
-    <a href="mailto:info.sergiooctaviomancebo@gmail.com"
-       class="block text-center bg-black text-yellow-400 hover:bg-gray-800 font-medium px-6 py-3 rounded-lg transition-all duration-300">
-        Envíame un email
-    </a>
-</div>
+            <!-- Botón CTA con efecto -->
+            <a href="#projects"
+               class="inline-block bg-white text-amber-600 font-bold px-8 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
+                Mis Proyectos <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
 
-<!-- Flecha para volver arriba -->
-<a href="#" class="fixed bottom-6 right-6 bg-yellow-500 text-black p-3 rounded-full shadow-lg hover:bg-yellow-600 transition-all duration-300">
-    <i class="fas fa-arrow-up"></i>
+        <!-- Flecha indicadora de scroll -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Sección de proyectos -->
+    <section id="projects" class="py-20">
+        <h2 class="text-4xl font-bold text-center mb-16 text-white neon-text">Mis Proyectos</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Proyecto 1 -->
+            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                    <img src="images/logo_octaviobikes.png" alt="Octavio Bikes"
+                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://octaviobikes.github.io/" target="_blank"
+                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Octavio Bikes</h3>
+                    <p class="text-yellow-100">CEO en Octavio Bikes</p>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                    <img src="images/logo_fitnessoctavio.png" alt="Fitness Octavio"
+                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://fitnessoctavio.github.io/" target="_blank"
+                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Fitness Octavio</h3>
+                    <p class="text-yellow-100">Entrenador Personal</p>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                <div class="relative h-48 bg-yellow-500 overflow-hidden">
+                    <img src="images/logo_siroko.png" alt="Siroko"
+                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://srko.co/octavio" target="_blank"
+                           class="bg-white text-amber-600 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                            Ver Oferta
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Siroko</h3>
+                    <p class="text-yellow-100">10% de descuento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contact" class="py-20">
+        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8 text-white neon-text">Contacto</h2>
+
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-white font-medium mb-2">Nombre</label>
+                        <input type="text" id="name"
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-white font-medium mb-2">Email</label>
+                        <input type="email" id="email"
+                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-white font-medium mb-2">Mensaje</label>
+                    <textarea id="message" rows="5"
+                              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-all duration-300"></textarea>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-white text-amber-600 font-bold px-6 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100 pulse">
+                    Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <p class="text-white mb-4">O contáctame directamente:</p>
+                <a href="mailto:info.sergiooctaviomancebo@gmail.com"
+                   class="inline-block bg-yellow-500 text-white font-bold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    info.sergiooctaviomancebo@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-8 text-center text-white text-opacity-80">
+    <p>© <span id="year"></span> Sergio Octavio Mancebo. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/tunumero" target="_blank"
+   class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50">
+    <i class="fab fa-whatsapp text-2xl"></i>
 </a>
 
-<!-- Font Awesome -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
-
-<!-- Script para animaciones al hacer scroll -->
+<!-- Scripts -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Animación al hacer scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate__fadeInUp');
+    // Inicializar partículas
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
                 }
-            });
-        }, { threshold: 0.1 });
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": true,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "push": {
+                    "particles_nb": 4
+                }
+            }
+        },
+        "retina_detect": true
+    });
 
-        document.querySelectorAll('#more, #contact').forEach(el => {
-            observer.observe(el);
+    // Cursor personalizado
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    });
+
+    document.querySelectorAll('a, button, input, .social-btn').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
         });
     });
+
+    // Efecto máquina de escribir
+    const typewriterText = "Emprendedor · Ciclista · Entrenador · Apasionado";
+    const typewriterElement = document.getElementById('typewriter');
+    let i = 0;
+
+    function typeWriter() {
+        if (i < typewriterText.length) {
+            typewriterElement.innerHTML += typewriterText.charAt(i);
+            i++;
+            setTimeout(typeWriter, Math.random() * 100 + 50);
+        }
+    }
+
+    // Animaciones al hacer scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.glass, .project-card');
+        elements.forEach(el => {
+            const elementPosition = el.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (elementPosition < screenPosition) {
+                el.classList.add('animate__animated', 'animate__fadeInUp');
+            }
+        });
+    };
+
+    // Año actual en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Inicialización
+    window.addEventListener('load', () => {
+        typeWriter();
+        animateOnScroll();
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
 </script>
 </body>
 </html>
