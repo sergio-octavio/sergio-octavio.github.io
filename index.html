@@ -474,56 +474,56 @@
 
         <script>
             // Manejo del formulario de contacto con Formspree
-            document.getElementById('contactForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                const form = e.target;
-                const formStatus = document.getElementById('formStatus');
-                const submitButton = form.querySelector('button[type="submit"]');
-
-                // Cambiar estado del botón
-                submitButton.disabled = true;
-                submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin ml-2"></i>';
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        // Mostrar mensaje de éxito
-                        formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
-                        formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-                        formStatus.classList.add('bg-green-100', 'text-green-700');
-
-                        // Resetear formulario
-                        form.reset();
-                    } else {
-                        throw new Error('Error en el envío');
-                    }
-                } catch (error) {
-                    // Mostrar mensaje de error
-                    formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
-                    formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-                    formStatus.classList.add('bg-red-100', 'text-red-700');
-                } finally {
-                    // Restaurar botón
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = 'Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>';
-
-                    // Mostrar mensaje de estado
-                    formStatus.classList.remove('hidden');
-
-                    // Ocultar mensaje después de 5 segundos
-                    setTimeout(() => {
-                        formStatus.classList.add('hidden');
-                    }, 5000);
-                }
-            });
+            // document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            //     e.preventDefault();
+            //
+            //     const form = e.target;
+            //     const formStatus = document.getElementById('formStatus');
+            //     const submitButton = form.querySelector('button[type="submit"]');
+            //
+            //     // Cambiar estado del botón
+            //     submitButton.disabled = true;
+            //     submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin ml-2"></i>';
+            //
+            //     try {
+            //         const response = await fetch(form.action, {
+            //             method: 'POST',
+            //             body: new FormData(form),
+            //             headers: {
+            //                 'Accept': 'application/json'
+            //             }
+            //         });
+            //
+            //         if (response.ok) {
+            //             // Mostrar mensaje de éxito
+            //             formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
+            //             formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+            //             formStatus.classList.add('bg-green-100', 'text-green-700');
+            //
+            //             // Resetear formulario
+            //             form.reset();
+            //         } else {
+            //             throw new Error('Error en el envío');
+            //         }
+            //     } catch (error) {
+            //         // Mostrar mensaje de error
+            //         formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+            //         formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+            //         formStatus.classList.add('bg-red-100', 'text-red-700');
+            //     } finally {
+            //         // Restaurar botón
+            //         submitButton.disabled = false;
+            //         submitButton.innerHTML = 'Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>';
+            //
+            //         // Mostrar mensaje de estado
+            //         formStatus.classList.remove('hidden');
+            //
+            //         // Ocultar mensaje después de 5 segundos
+            //         setTimeout(() => {
+            //             formStatus.classList.add('hidden');
+            //         }, 5000);
+            //     }
+            // });
         </script>
     </main>
 
