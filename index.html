@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
@@ -20,7 +21,8 @@
         body {
             overflow-x: hidden;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            color: #000; /* Texto principal en negro */
+            color: #000;
+            /* Texto principal en negro */
         }
 
         /* Efecto partículas */
@@ -55,13 +57,27 @@
 
         /* Animaciones personalizadas */
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .floating {
@@ -76,10 +92,10 @@
         .neon-text {
             color: #000;
             text-shadow:
-                    0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 15px var(--primary),
-                    0 0 20px var(--primary);
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 15px var(--primary),
+                0 0 20px var(--primary);
         }
 
         /* Efecto vidrio mejorado */
@@ -108,576 +124,598 @@
 </head>
 
 <body class="bg-gradient-to-br from-yellow-400 to-amber-500 min-h-screen relative overflow-x-hidden">
-<!-- Efecto partículas -->
-<div id="particles-js"></div>
+    <!-- Efecto partículas -->
+    <div id="particles-js"></div>
 
-<!-- Cursor personalizado -->
-<div class="cursor"></div>
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
 
-<!-- Contenido principal -->
-<main class="container mx-auto px-4 py-12 relative z-10">
-    <!-- Sección hero -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center">
-        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl transform transition-all duration-500 hover:shadow-xl">
-            <!-- Avatar con efecto flotante -->
-            <div class="relative mx-auto w-40 h-40 mb-8 group">
-                <img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
-                     class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl floating">
-                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-yellow-300 transition-all duration-500"></div>
-                <div class="absolute -inset-2 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-40 blur-md transition-all duration-500"></div>
-            </div>
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 py-12 relative z-10">
+        <!-- Sección hero -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center">
+            <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl transform transition-all duration-500 hover:shadow-xl">
+                <!-- Avatar con efecto flotante -->
+                <div class="relative mx-auto w-40 h-40 mb-8 group">
+                    <img src="images/foto.jpg" alt="Sergio Octavio Mancebo"
+                        class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl floating">
+                    <div
+                        class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-yellow-300 transition-all duration-500">
+                    </div>
+                    <div
+                        class="absolute -inset-2 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-40 blur-md transition-all duration-500">
+                    </div>
+                </div>
 
-            <!-- Título con efecto neón (texto negro con borde amarillo) -->
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4  animate__animated animate__fadeInDown">
-                Sergio Octavio Mancebo
-            </h1>
+                <!-- Título con efecto neón (texto negro con borde amarillo) -->
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4  animate__animated animate__fadeInDown">
+                    Sergio Octavio Mancebo
+                </h1>
 
-            <!-- Subtítulo con efecto máquina de escribir -->
-            <p class="text-xl md:text-2xl font-medium mb-8 typewriter" id="typewriter"></p>
+                <!-- Subtítulo con efecto máquina de escribir -->
+                <p class="text-xl md:text-2xl font-medium mb-8 typewriter" id="typewriter"></p>
 
-            <!-- Redes sociales con efecto hover 3D -->
-            <div class="flex justify-center space-x-6 mb-12">
-                <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
-                   class="social-btn instagram transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-instagram text-3xl text-gray-900 hover:text-amber-600"></i>
+                <!-- Redes sociales con efecto hover 3D -->
+                <div class="flex justify-center space-x-6 mb-12">
+                    <a href="https://www.instagram.com/sergio.octavio/" target="_blank"
+                        class="social-btn instagram transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                        <i class="fab fa-instagram text-3xl text-gray-900 hover:text-amber-600"></i>
+                    </a>
+                    <a href="https://x.com/SergioOctaviooo" target="_blank"
+                        class="social-btn twitter transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                        <i class="fab fa-twitter text-3xl text-gray-900 hover:text-amber-600"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
+                        class="social-btn linkedin transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                        <i class="fab fa-linkedin-in text-3xl text-gray-900 hover:text-amber-600"></i>
+                    </a>
+                    <a href="https://github.com/sergio-octavio" target="_blank"
+                        class="social-btn github transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+                        <i class="fab fa-github text-3xl text-gray-900 hover:text-amber-600"></i>
+                    </a>
+                </div>
+
+                <!-- Botón CTA con efecto -->
+                <a href="#projects"
+                    class="inline-block bg-gray-900 text-amber-400 font-bold px-8 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-black pulse">
+                    Mis Proyectos <i class="fas fa-arrow-down ml-2"></i>
                 </a>
-                <a href="https://x.com/SergioOctaviooo" target="_blank"
-                   class="social-btn twitter transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-twitter text-3xl text-gray-900 hover:text-amber-600"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sergiooctavio/" target="_blank"
-                   class="social-btn linkedin transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-linkedin-in text-3xl text-gray-900 hover:text-amber-600"></i>
-                </a>
-                <a href="https://github.com/sergio-octavio" target="_blank"
-                   class="social-btn github transform transition-all duration-300 hover:-translate-y-2 hover:scale-110">
-                    <i class="fab fa-github text-3xl text-gray-900 hover:text-amber-600"></i>
-                </a>
             </div>
 
-            <!-- Botón CTA con efecto -->
-            <a href="#projects"
-               class="inline-block bg-gray-900 text-amber-400 font-bold px-8 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-black pulse">
-                Mis Proyectos <i class="fas fa-arrow-down ml-2"></i>
-            </a>
-        </div>
-
-        <!-- Flecha indicadora de scroll -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-gray-900 text-2xl"></i>
-        </div>
-    </section>
-
-    <!-- Sección de proyectos -->
-    <section id="projects" class="py-20">
-        <h2 class="text-4xl font-bold text-center mb-16 ">Mis Proyectos</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Proyecto 1 -->
-            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="images/logo_octaviobikes.png" alt="Octavio Bikes"
-                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a href="https://octaviobikes.netlify.app/" target="_blank"
-                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            VER PROYECTO
-                        </a>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">Octavio Bikes</h3>
-                    <p class="text-gray-700">CEO en Octavio Bikes</p>
-                </div>
+            <!-- Flecha indicadora de scroll -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-gray-900 text-2xl"></i>
             </div>
+        </section>
 
-            <!-- Proyecto 2 -->
-            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="images/logo_fitnessoctavio.png" alt="Fitness Octavio"
-                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a href="https://fitnessoctavio.com/" target="_blank"
-                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            VER PROYECTO
-                        </a>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">Fitness Octavio</h3>
-                    <p class="text-gray-700">Entrenador Personal</p>
-                </div>
-            </div>
+        <!-- Sección de proyectos -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-16 ">Mis Proyectos</h2>
 
-            <!-- Proyecto 3 -->
-            <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="images/logo_siroko.png" alt="Siroko"
-                         class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a href="https://srko.co/octavio" target="_blank"
-                           class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                            VER OFERTA
-                        </a>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">Siroko</h3>
-                    <p class="text-gray-700">10% de descuento</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Sección de Próximos Proyectos - Añadir después de la sección de proyectos actuales -->
-    <section id="upcoming" class="py-20 bg-yellow-50 bg-opacity-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Próximos Proyectos</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Proyecto 1: Eventos Octavio -->
-                <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                    <div class="relative h-48 bg-gradient-to-r from-amber-100 to-yellow-200 overflow-hidden flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <i class="fas fa-calendar-alt text-6xl text-amber-600 mb-4"></i>
-                        </div>
-                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-                            <p class="text-white text-center mb-4">Plataforma integral para la organización y gestión de
-                                eventos.</p>
-                            <a href="https://eventosoctavio.com/" target="_blank"
-                               class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
-                                VER PROYECTO
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white bg-opacity-90">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-medium text-amber-600">En desarrollo</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">Próximamente</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2: Cyclist Connect -->
-                <div class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
-                    <div class="relative h-48 bg-gradient-to-r from-blue-50 to-cyan-100 overflow-hidden flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <i class="fas fa-bicycle text-6xl text-blue-500 mb-4"></i>
-<!--                            <h3 class="text-2xl font-bold text-gray-900">****** *******</h3>-->
-                        </div>
-                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-                            <p class="text-white text-center mb-4">La App del Ciclismo.</p>
-                            <a href="https://www.instagram.com/cyclist.connect/" target="_blank"
-                               class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div
+                    class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                    <div class="relative h-48 bg-gray-100 overflow-hidden">
+                        <img src="images/logo_octaviobikes.png" alt="Octavio Bikes"
+                            class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://octaviobikes.netlify.app/" target="_blank"
+                                class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
                                 VER PROYECTO
                             </a>
                         </div>
                     </div>
-                    <div class="p-6 bg-white bg-opacity-90">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-medium text-blue-600">En planificación</span>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">2024</span>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Octavio Bikes</h3>
+                        <p class="text-gray-700">CEO en Octavio Bikes</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                    <div class="relative h-48 bg-gray-100 overflow-hidden">
+                        <img src="images/logo_fitnessoctavio.png" alt="Fitness Octavio"
+                            class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://fitnessoctavio.com/" target="_blank"
+                                class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                                VER PROYECTO
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Fitness Octavio</h3>
+                        <p class="text-gray-700">Entrenador Personal</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div
+                    class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                    <div class="relative h-48 bg-gray-100 overflow-hidden">
+                        <img src="images/logo_siroko.png" alt="Siroko"
+                            class="w-full h-full object-contain p-6 transform transition-all duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://srko.co/octavio" target="_blank"
+                                class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                                VER OFERTA
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Siroko</h3>
+                        <p class="text-gray-700">10% de descuento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección de Próximos Proyectos - Añadir después de la sección de proyectos actuales -->
+        <section id="upcoming" class="py-20 bg-yellow-50 bg-opacity-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16">Próximos Proyectos</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Proyecto 1: Eventos Octavio -->
+                    <div
+                        class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                        <div
+                            class="relative h-48 bg-gradient-to-r from-amber-100 to-yellow-200 overflow-hidden flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <i class="fas fa-calendar-alt text-6xl text-amber-600 mb-4"></i>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
+                                <p class="text-white text-center mb-4">Plataforma integral para la organización y
+                                    gestión de
+                                    eventos.</p>
+                                <a href="https://eventosoctavio.com/" target="_blank"
+                                    class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                                    VER PROYECTO
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white bg-opacity-90">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-amber-600">En desarrollo</span>
+                                <span
+                                    class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">Próximamente</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2: Cyclist Connect -->
+                    <div
+                        class="glass rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 group">
+                        <div
+                            class="relative h-48 bg-gradient-to-r from-blue-50 to-cyan-100 overflow-hidden flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <i class="fas fa-bicycle text-6xl text-blue-500 mb-4"></i>
+                                <!--                            <h3 class="text-2xl font-bold text-gray-900">****** *******</h3>-->
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
+                                <p class="text-white text-center mb-4">La App del Ciclismo.</p>
+                                <a href="https://www.instagram.com/cyclist.connect/" target="_blank"
+                                    class="bg-gray-900 text-amber-400 px-6 py-2 rounded-full font-bold transform transition-all duration-300 hover:scale-110">
+                                    VER PROYECTO
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white bg-opacity-90">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-blue-600">En planificación</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">2024</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Nota adicional -->
-            <div class="text-center mt-12 max-w-2xl mx-auto glass rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-2">¿Necesitas ayuda para tus ideas?</h3>
-                <p class="mb-4">Estoy abierto a colaboraciones y sugerencias para hacer realidad tus proyectos.</p>
-                <a href="mailto:info.sergiooctaviomancebo@gmail.com"
-                   class="inline-block bg-gray-900 text-amber-400 font-bold px-6 py-2 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl pulse">
-                    Contáctame para colaborar <i class="fas fa-envelope ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Sección de contacto - Versión modificada -->
-    <section id="contact" class="py-20">
-        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Contacto</h2>
-
-            <!-- Formulario con Formspree -->
-            <form id="contactForm" action="https://formspree.io/f/manrordw" method="POST" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="name" class="block font-medium mb-2">Nombre</label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
-                    </div>
-
-                    <div>
-                        <label for="lastname" class="block font-medium mb-2">Apellidos</label>
-                        <input type="text" id="lastname" name="lastname"
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
-                    </div>
-                    <div>
-                        <label for="email" class="block font-medium mb-2">Email*</label>
-                        <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
-                        <small id="emailError" class="text-red-500 text-sm hidden">Introduce un correo válido (ej. ejemplo@dominio.com)</small>
-                    </div>
-
-                    <div>
-                        <label for="confirmEmail" class="block font-medium mb-2">Confirmar Email*</label>
-                        <input type="email" id="confirmEmail" name="confirmEmail" required
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
-                        <small id="confirmEmailError" class="text-red-500 text-sm hidden">Los correos no coinciden</small>
-                    </div>
-
-                    <div>
-                        <label for="phone" class="block font-medium mb-2">Teléfono*</label>
-                        <input type="tel" id="phone" name="phone"
-                               minlength="9" maxlength="9"
-                               oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-                               class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
-                        <small id="phoneError" class="text-red-500 text-sm hidden">Debe tener exactamente 9 dígitos numéricos</small>
-                    </div>
-
-
+                <!-- Nota adicional -->
+                <div class="text-center mt-12 max-w-2xl mx-auto glass rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">¿Necesitas ayuda para tus ideas?</h3>
+                    <p class="mb-4">Estoy abierto a colaboraciones y sugerencias para hacer realidad tus proyectos.</p>
+                    <a href="mailto:info.sergiooctaviomancebo@gmail.com"
+                        class="inline-block bg-gray-900 text-amber-400 font-bold px-6 py-2 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl pulse">
+                        Contáctame para colaborar <i class="fas fa-envelope ml-2"></i>
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <div>
-                    <label for="message" class="block font-medium mb-2">Mensaje*</label>
-                    <textarea id="message" name="message" rows="5" required
-                              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"></textarea>
-                </div>
 
-                <!-- Mensaje de estado (oculto inicialmente) -->
-                <div id="formStatus" class="hidden px-4 py-3 rounded-lg"></div>
+        <!-- Sección de contacto - Versión modificada -->
+        <section id="contact" class="py-20">
+            <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8">Contacto</h2>
 
-                <button type="submit"
+                <!-- Formulario con Formspree -->
+                <form id="contactForm" action="https://formspree.io/f/xblnyndr" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                        </div>
+
+                        <div>
+                            <label for="lastname" class="block font-medium mb-2">Apellidos</label>
+                            <input type="text" id="lastname" name="lastname"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block font-medium mb-2">Email*</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                            <small id="emailError" class="text-red-500 text-sm hidden">Introduce un correo válido (ej.
+                                ejemplo@dominio.com)</small>
+                        </div>
+
+                        <div>
+                            <label for="confirmEmail" class="block font-medium mb-2">Confirmar Email*</label>
+                            <input type="email" id="confirmEmail" name="confirmEmail" required
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                            <small id="confirmEmailError" class="text-red-500 text-sm hidden">Los correos no
+                                coinciden</small>
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block font-medium mb-2">Teléfono*</label>
+                            <input type="tel" id="phone" name="phone" minlength="9" maxlength="9"
+                                oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                            <small id="phoneError" class="text-red-500 text-sm hidden">Debe tener exactamente 9 dígitos
+                                numéricos</small>
+                        </div>
+
+
+                    </div>
+
+                    <div>
+                        <label for="message" class="block font-medium mb-2">Mensaje*</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"></textarea>
+                    </div>
+
+                    <!-- Mensaje de estado (oculto inicialmente) -->
+                    <div id="formStatus" class="hidden px-4 py-3 rounded-lg"></div>
+
+                    <button type="submit"
                         class="w-full bg-gray-900 text-amber-400 font-bold px-6 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl pulse">
-                    Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
-                </button>
-            </form>
+                        Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
 
-            <div class="mt-8 text-center">
-                <p class="mb-4">O contáctame directamente:</p>
-                <a href="mailto:info.sergiooctaviomancebo@gmail.com"
-                   class="inline-block bg-gray-900 text-amber-400 font-bold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    info.sergiooctaviomancebo@gmail.com <i class="fas fa-envelope ml-2"></i>
-                </a>
+                <div class="mt-8 text-center">
+                    <p class="mb-4">O contáctame directamente:</p>
+                    <a href="mailto:info.sergiooctaviomancebo@gmail.com"
+                        class="inline-block bg-gray-900 text-amber-400 font-bold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        info.sergiooctaviomancebo@gmail.com <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const emailInput = document.getElementById('email');
-            const confirmEmailInput = document.getElementById('confirmEmail');
-            const phoneInput = document.getElementById('phone');
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const emailInput = document.getElementById('email');
+                const confirmEmailInput = document.getElementById('confirmEmail');
+                const phoneInput = document.getElementById('phone');
 
-            const emailError = document.getElementById('emailError');
-            const confirmEmailError = document.getElementById('confirmEmailError');
-            const phoneError = document.getElementById('phoneError');
+                const emailError = document.getElementById('emailError');
+                const confirmEmailError = document.getElementById('confirmEmailError');
+                const phoneError = document.getElementById('phoneError');
 
-            // Expresión regular para un email válido
-            const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                // Expresión regular para un email válido
+                const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-            // Validación en tiempo real del correo
-            emailInput.addEventListener('input', () => {
-                const email = emailInput.value.trim();
+                // Validación en tiempo real del correo
+                emailInput.addEventListener('input', () => {
+                    const email = emailInput.value.trim();
 
-                if (!validateEmail(email)) {
-                    emailInput.classList.add('error');
-                    emailError.classList.remove('hidden');
-                } else {
-                    emailInput.classList.remove('error');
-                    emailError.classList.add('hidden');
-                }
+                    if (!validateEmail(email)) {
+                        emailInput.classList.add('error');
+                        emailError.classList.remove('hidden');
+                    } else {
+                        emailInput.classList.remove('error');
+                        emailError.classList.add('hidden');
+                    }
 
-                if (confirmEmailInput.value.trim() !== '') {
-                    checkEmailsMatch();
-                }
-            });
-
-            // Validación en tiempo real del segundo correo
-            confirmEmailInput.addEventListener('input', () => {
-                checkEmailsMatch();
-            });
-
-            // Comparar email con confirmEmail
-            function checkEmailsMatch() {
-                const email = emailInput.value.trim();
-                const confirm = confirmEmailInput.value.trim();
-
-                if (email !== confirm || confirm === '') {
-                    confirmEmailInput.classList.add('error');
-                    confirmEmailError.classList.remove('hidden');
-                } else {
-                    confirmEmailInput.classList.remove('error');
-                    confirmEmailError.classList.add('hidden');
-                }
-            }
-
-            // Validación en tiempo real del teléfono
-            phoneInput.addEventListener('input', () => {
-                phoneInput.value = phoneInput.value.replace(/\D/g, ''); // Solo números
-
-                if (phoneInput.value.length !== 9) {
-                    phoneInput.classList.add('error');
-                    phoneError.classList.remove('hidden');
-                } else {
-                    phoneInput.classList.remove('error');
-                    phoneError.classList.add('hidden');
-                }
-            });
-        });
-    </script>
-
-
-
-
-
-    <script>
-        // Manejo del formulario de contacto con Formspree
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const formStatus = document.getElementById('formStatus');
-            const submitButton = form.querySelector('button[type="submit"]');
-
-            // Cambiar estado del botón
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin ml-2"></i>';
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
+                    if (confirmEmailInput.value.trim() !== '') {
+                        checkEmailsMatch();
                     }
                 });
 
-                if (response.ok) {
-                    // Mostrar mensaje de éxito
-                    formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
-                    formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-                    formStatus.classList.add('bg-green-100', 'text-green-700');
+                // Validación en tiempo real del segundo correo
+                confirmEmailInput.addEventListener('input', () => {
+                    checkEmailsMatch();
+                });
 
-                    // Resetear formulario
-                    form.reset();
-                } else {
-                    throw new Error('Error en el envío');
+                // Comparar email con confirmEmail
+                function checkEmailsMatch() {
+                    const email = emailInput.value.trim();
+                    const confirm = confirmEmailInput.value.trim();
+
+                    if (email !== confirm || confirm === '') {
+                        confirmEmailInput.classList.add('error');
+                        confirmEmailError.classList.remove('hidden');
+                    } else {
+                        confirmEmailInput.classList.remove('error');
+                        confirmEmailError.classList.add('hidden');
+                    }
                 }
-            } catch (error) {
-                // Mostrar mensaje de error
-                formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
-                formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-                formStatus.classList.add('bg-red-100', 'text-red-700');
-            } finally {
-                // Restaurar botón
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>';
 
-                // Mostrar mensaje de estado
-                formStatus.classList.remove('hidden');
+                // Validación en tiempo real del teléfono
+                phoneInput.addEventListener('input', () => {
+                    phoneInput.value = phoneInput.value.replace(/\D/g, ''); // Solo números
 
-                // Ocultar mensaje después de 5 segundos
-                setTimeout(() => {
-                    formStatus.classList.add('hidden');
-                }, 5000);
-            }
-        });
-    </script>
-</main>
+                    if (phoneInput.value.length !== 9) {
+                        phoneInput.classList.add('error');
+                        phoneError.classList.remove('hidden');
+                    } else {
+                        phoneInput.classList.remove('error');
+                        phoneError.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
 
-<!-- Footer -->
-<footer class="py-8 text-center text-gray-900">
-    <p>© <span id="year"></span> Sergio Octavio Mancebo. Todos los derechos reservados.</p>
-</footer>
 
-<!-- Botón flotante de WhatsApp con mensaje predeterminado -->
-<a href="https://wa.me/34681148027?text=Hola%20mi%20nombre%20es%20[TU%20NOMBRE].%20Me%20pongo%20en%20contacto%20contigo%20a%20través%20de%20la%20página%20web%20por%20este%20motivo:" target="_blank"
-   class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50">
-    <i class="fab fa-whatsapp text-2xl"></i>
-</a>
 
-<!-- Botón Volver Arriba -->
-<button id="btnVolverArriba"
+
+
+        <script>
+            // Manejo del formulario de contacto con Formspree
+            document.getElementById('contactForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const formStatus = document.getElementById('formStatus');
+                const submitButton = form.querySelector('button[type="submit"]');
+
+                // Cambiar estado del botón
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin ml-2"></i>';
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Mostrar mensaje de éxito
+                        formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
+                        formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                        formStatus.classList.add('bg-green-100', 'text-green-700');
+
+                        // Resetear formulario
+                        form.reset();
+                    } else {
+                        throw new Error('Error en el envío');
+                    }
+                } catch (error) {
+                    // Mostrar mensaje de error
+                    formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+                    formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                    formStatus.classList.add('bg-red-100', 'text-red-700');
+                } finally {
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>';
+
+                    // Mostrar mensaje de estado
+                    formStatus.classList.remove('hidden');
+
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 5000);
+                }
+            });
+        </script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-900">
+        <p>© <span id="year"></span> Sergio Octavio Mancebo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp con mensaje predeterminado -->
+    <a href="https://wa.me/34681148027?text=Hola%20mi%20nombre%20es%20[TU%20NOMBRE].%20Me%20pongo%20en%20contacto%20contigo%20a%20través%20de%20la%20página%20web%20por%20este%20motivo:"
+        target="_blank"
+        class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Botón Volver Arriba -->
+    <button id="btnVolverArriba"
         class="fixed bottom-24 right-8 bg-gray-900 text-amber-400 p-4 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl z-50 opacity-0">
-    <i class="fas fa-arrow-up text-2xl"></i>
-</button>
+        <i class="fas fa-arrow-up text-2xl"></i>
+    </button>
 
 
-<!-- Scripts -->
-<script>
-    // Inicializar partículas
-    particlesJS("particles-js", {
-        "particles": {
-            "number": {
-                "value": 80,
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#ffffff"
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                }
-            },
-            "opacity": {
-                "value": 0.5,
-                "random": true,
-                "anim": {
-                    "enable": true,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 3,
-                "random": true,
-                "anim": {
-                    "enable": true,
-                    "speed": 2,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#ffffff",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 2,
-                "direction": "none",
-                "random": true,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": true,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
+    <!-- Scripts -->
+    <script>
+        // Inicializar partículas
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
                     }
                 },
-                "push": {
-                    "particles_nb": 4
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
                 }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Cursor personalizado
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, .social-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+            });
+        });
+
+        // Efecto máquina de escribir
+        const typewriterText = "Ingeniero Software · Entrenador · Apasionado del Emprendimiento";
+        const typewriterElement = document.getElementById('typewriter');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < typewriterText.length) {
+                typewriterElement.innerHTML += typewriterText.charAt(i);
+                i++;
+                setTimeout(typeWriter, Math.random() * 100 + 50);
             }
-        },
-        "retina_detect": true
-    });
-
-    // Cursor personalizado
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
-    });
-
-    document.querySelectorAll('a, button, input, .social-btn').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.classList.add('active');
-        });
-        el.addEventListener('mouseleave', () => {
-            cursor.classList.remove('active');
-        });
-    });
-
-    // Efecto máquina de escribir
-    const typewriterText = "Ingeniero Software · Entrenador · Apasionado del Emprendimiento";
-    const typewriterElement = document.getElementById('typewriter');
-    let i = 0;
-
-    function typeWriter() {
-        if (i < typewriterText.length) {
-            typewriterElement.innerHTML += typewriterText.charAt(i);
-            i++;
-            setTimeout(typeWriter, Math.random() * 100 + 50);
         }
-    }
 
-    // Animaciones al hacer scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.glass, .project-card');
-        elements.forEach(el => {
-            const elementPosition = el.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+        // Animaciones al hacer scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.glass, .project-card');
+            elements.forEach(el => {
+                const elementPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
 
-            if (elementPosition < screenPosition) {
-                el.classList.add('animate__animated', 'animate__fadeInUp');
+                if (elementPosition < screenPosition) {
+                    el.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+
+        // Funcionalidad del botón Volver Arriba
+        const btnVolverArriba = document.getElementById('btnVolverArriba');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnVolverArriba.style.opacity = '1';
+            } else {
+                btnVolverArriba.style.opacity = '0';
             }
         });
-    };
 
-    // Funcionalidad del botón Volver Arriba
-    const btnVolverArriba = document.getElementById('btnVolverArriba');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            btnVolverArriba.style.opacity = '1';
-        } else {
-            btnVolverArriba.style.opacity = '0';
-        }
-    });
-
-    btnVolverArriba.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        btnVolverArriba.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
 
 
 
 
 
-    // Año actual en el footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+        // Año actual en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Inicialización
-    window.addEventListener('load', () => {
-        typeWriter();
-        animateOnScroll();
-    });
+        // Inicialización
+        window.addEventListener('load', () => {
+            typeWriter();
+            animateOnScroll();
+        });
 
-    window.addEventListener('scroll', animateOnScroll);
-</script>
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
 </body>
+
 </html>
